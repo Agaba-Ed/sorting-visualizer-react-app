@@ -1,0 +1,49 @@
+/* App.css */
+.visualizer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%; 
+  margin: 20px auto;
+}
+
+.bars-container {
+  display: flex;
+  width: 100%; 
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.bar {
+  background-color: steelblue;
+  margin: 0 2px; 
+  width: 10px;
+  transition: height 0.2s ease; 
+}
+
+.bar.comparing { 
+  background-color: red; 
+}
+
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls button,
+.controls select {
+  margin: 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  cursor: pointer;
+}
+
+.controls button:disabled {
+  opacity: 0.5; 
+  cursor: default;
+}
