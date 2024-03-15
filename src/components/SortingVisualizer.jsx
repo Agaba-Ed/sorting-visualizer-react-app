@@ -67,6 +67,11 @@ const SortingVisualizer = () => {
             swapped = false;
             for (let i = 0; i < arr.length - 1; i++) {
                 if (arr[i].value > arr[i + 1].value) {
+                    
+                    playNote(bars[i].value * 2);
+
+                    // Swap elements
+                    [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
                     // Update colors for comparison
                     setBars([
                         ...arr.slice(0, i),
@@ -74,11 +79,6 @@ const SortingVisualizer = () => {
                         { ...arr[i + 1], color: 'red'},
                         ...arr.slice(i + 2)
                     ]); 
-                    playNote(bars[i].value * 2);
-
-                    // Swap elements
-                    [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
-                    setBars([...arr]);
                     playNote(bars[i].value * 2 + 100);
 
                     await new Promise(resolve => setTimeout(resolve, 13));
